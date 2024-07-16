@@ -1,6 +1,7 @@
 Noxe
 
 Description:
+
 NOXE is a comprehensive web application designed to provide users with detailed information about movies, TV shows, and celebrities. Built with Angular and .NET, the application integrates seamlessly with TheMovieDB API to deliver real-time data and insights. Key features include user authentication, the ability to add movies to favorites, and an interactive user interface that highlights trending and popular content. The project demonstrates a strong focus on user experience and performance optimization, making it a robust platform for movie enthusiasts.
 
 Key Features:
@@ -18,6 +19,7 @@ Technologies Used:
 Frontend: Angular, SCSS, Bootstrap, ngx-owl-carousel-o
 Backend: .NET, SQL Server
 API Integration: TheMovieDB API
+
 How to Run:
 
 Clone the repository: git clone https://github.com/yourusername/NOXE.git
