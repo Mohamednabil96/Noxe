@@ -1,0 +1,13 @@
+<div class="position-relative">
+  <div class="content position-relative">
+    <img class="w-100" 
+         [src]="info.poster_path ? 'https://image.tmdb.org/t/p/w500' + info.poster_path : '../../assets/images/default.jpg'" alt="">
+         <div class="overlay p-3" [routerLink]="['/details', info.media_type, info.id]">
+      <p *ngIf="info.overview">{{info.overview | seemore:10}}</p>
+    </div>
+  </div>
+  <p *ngIf="info.vote_average" class="position-absolute top-0 end-0 bg-info p-2 fw-bold">{{info.vote_average | number:'1.0-1'}}</p>
+  <h5 class="my-3">{{info.title || info.name |uppercase}}</h5>
+</div>
+
+

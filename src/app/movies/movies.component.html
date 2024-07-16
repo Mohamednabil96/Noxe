@@ -1,0 +1,28 @@
+<div class="movie-header d-flex align-items-center mb-3 position-relative">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <h2 class="text-center fw-bold">FIND A MOVIE</h2>
+      <input [(ngModel)]="term" type="text" (input)="search(term)" class="form-control  bg-transparent text-white" placeholder="Search ...">
+    </div>
+  </div>
+</div>
+
+<div class="container pe-5">
+  <app-loading *ngIf="movieData?.length == 0"></app-loading>
+
+
+  <div class="row">
+    <div class="col-md-3 my-3" *ngFor="let movie of displayedMovieData">
+      <app-item [info]="movie"></app-item>
+    </div>
+  </div>
+
+  <nav aria-label="..." class="d-flex justify-content-center align-items-center my-4" *ngIf="pages.length > 1">
+    <ul class="pagination">
+      <li *ngFor="let page of pages" (click)="onPageChange(page)" class="page-item">
+        <a class="page-link">{{page}}</a>
+      </li>
+    </ul>
+  </nav>
+</div>

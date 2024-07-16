@@ -1,0 +1,22 @@
+<div class="container py-5">
+  <app-loading *ngIf="!networkDetails"></app-loading>
+
+  <div class="row" *ngIf="networkDetails">
+    <div class="col-md-4">
+      <img [src]="'https://image.tmdb.org/t/p/w500'+ networkDetails.logo_path" class="w-100" alt="">
+    </div>
+
+    <div class="col-md-8">
+      <div class="content">
+        <h1>{{networkDetails.name}}</h1>
+
+        <ul class="list-unstyled d-flex flex-column justify-content-center">
+          <li *ngIf="networkDetails.origin_country" class="mb-4 fw-bold">Origin Country: {{networkDetails.origin_country}}</li> 
+          <li *ngIf="networkDetails.headquarters" class="mb-4 fw-bold">Headquarters: {{networkDetails.headquarters}}</li> 
+          <li *ngIf="networkDetails.homepage" class="mb-5 fw-bold">Website: <a class="text-light text-decoration-none" [href]="networkDetails.homepage" target="_blank">{{networkDetails.homepage}}</a></li>
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</div>

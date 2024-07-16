@@ -1,0 +1,46 @@
+<app-home-header [allPopularMoviesToday]="allPopularMoviesToday"></app-home-header>
+<div class="container">
+    <div class="row py-3" *ngIf="allMovies.length">
+        <div class="col-md-4">
+            <div class="header d-flex flex-column justify-content-center h-100">
+                <h2>Trending Movies <br> To Watch Right Now </h2>
+                <p class="text-secondary">Most Watched Movies By Week</p>
+            </div>
+        </div>
+
+        <div class="col-md-2" *ngFor="let movie of allMovies">
+            <app-item [info]="movie"></app-item>
+        </div>
+
+    </div>
+
+    <div class="row py-3" *ngIf="allTV.length">
+        <div class="col-md-4">
+            <div class="header d-flex flex-column justify-content-center h-100">
+                <h2>Trending TV <br> To Watch Right Now </h2>
+                <p class="text-secondary">Most Watched TV By Week</p>
+            </div>
+        </div>
+
+        <div class="col-md-2" *ngFor="let tv of allTV">
+            <app-item [info]="tv"></app-item>
+        </div>
+
+    </div>
+
+    <div class="row py-3" *ngIf="allPeople.length">
+        <div class="col-md-4">
+            <div class="header d-flex flex-column justify-content-center h-100">
+                <h2>Trending People <br> To Watch Right Now </h2>
+                <p class="text-secondary">Most Watched People By Week</p>
+            </div>
+        </div>
+
+        <div class="col-md-2" *ngFor="let person of allPeople">
+            <app-item [info]="person"></app-item>
+        </div>
+
+    </div>
+
+    <app-loading *ngIf="allMovies?.length ==0 || allTV?.length ==0 "></app-loading>
+</div>

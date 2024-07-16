@@ -1,0 +1,17 @@
+<div class="container py-5">
+  <app-loading *ngIf="displayedNetwork.length == 0"></app-loading>
+  
+  <div class="row">
+    <div class="col-md-3 my-3" *ngFor="let network of displayedNetwork">
+      <div class="network-logo-container position-relative">
+        <div class="content position-relative">
+          <img class="network-logo w-100" [src]="network.logo_path ? 'https://image.tmdb.org/t/p/w500' + network.logo_path : 'path/to/default-image.jpg'" alt="{{network.name}}">
+        </div>
+        <div class="overlay p-3" [routerLink]="['/network-details', network.id]">
+          <p>{{network.name | uppercase}}</p>
+        </div>
+      </div>
+      <h5 class="my-3">{{network.name | uppercase}}</h5>
+    </div>
+  </div>
+</div>
